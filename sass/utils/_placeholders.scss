@@ -1,0 +1,18 @@
+%social-networks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 250ms $transition;
+}
+%styling-checkbox {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 16px;
+  height: 15px;
+}

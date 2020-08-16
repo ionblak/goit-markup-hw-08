@@ -1,0 +1,84 @@
+.team {
+  display: flex;
+
+  .item {
+    padding-bottom: 24px;
+    width: calc((100% - 90px) / 4);
+    margin-right: 30px;
+    background: $bg-color;
+    /* material shadow v1 */
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 0px 0px 4px 4px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    color: $title-text-color;
+  }
+
+  .text {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+  }
+}
+.photo {
+  margin-bottom: 30px;
+}
+
+.section-team {
+  background-color: $team-bg-color;
+}
+/* стилизация соц-сетей */
+.social-networks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  .imet {
+    margin-right: 10px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+.social-networks__link {
+  @extend %social-networks;
+
+  background-color: $bg-color;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+.social-networks__link-svg {
+  border-radius: 50px;
+  fill: #afb1b8;
+
+  transition: fill 250ms $transition;
+
+  .social-networks__link:hover &,
+  .social-networks__link:focus & {
+    fill: $bg-color;
+  }
+}
+
+.section-team,
+.section-customers {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}

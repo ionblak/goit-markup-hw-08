@@ -1,0 +1,205 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms $transition;
+}
+.backdrop-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  width: 528px;
+  height: 581px;
+  background-color: $bg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: fill 250ms $transition;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+.modal-button__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #212121;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-form__field {
+  position: relative;
+  display: block;
+  margin-bottom: 28px;
+}
+.modal-form__input {
+  padding: 11px 42px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border 250ms $transition;
+
+  &:focus {
+    border: 1px solid #2196f3;
+    outline: none;
+  }
+}
+
+.modal-form__label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  transition: transform 250ms $transition, color 250ms $transition;
+}
+.modal-form__input:focus + .modal-form__label,
+.modal-form__input:not(:placeholder-shown) + .modal-form__label {
+  color: $accent-color;
+  transform: translate(-30px, -40px);
+}
+.modal-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  transition: fill 250ms $transition;
+
+  .modal-form__input:focus ~ & {
+    fill: $accent-color;
+  }
+}
+
+.modal-form__comment {
+  resize: none;
+  width: 448px;
+  height: 120px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  transition: border 250ms $transition;
+
+  &:focus {
+    border: 1px solid $accent-color;
+    outline: none;
+  }
+}
+
+/* стилизация чекбокса в модалке */
+.modal-form__agreement-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.modal-form__agreement-label {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  &::before {
+    @extend %styling-checkbox;
+    border: 2px solid #212121;
+    border-radius: 3px;
+  }
+
+  &::after {
+    @extend %styling-checkbox;
+    background-image: url(../image/icon-check.svg);
+  }
+}
+
+.modal-form__agreement-checkbox + .modal-form__agreement-label::after {
+  content: none;
+}
+.modal-form__agreement-checkbox:checked + .modal-form__agreement-label::after {
+  content: "";
+}
+
+.modal-form__agreement-checkbox:focus + .modal-form__agreement-label::before {
+  outline: $accent-color auto 5px;
+}
+.modal-form__agreement-link {
+  color: $accent-color;
+}
+.modal-form__button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $accent-color;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $bg-color;
+  cursor: pointer;
+  transition: background-color 250ms $transition, box-shadow 250ms $transition;
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}

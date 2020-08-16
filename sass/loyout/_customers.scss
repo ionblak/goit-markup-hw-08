@@ -1,0 +1,39 @@
+.customers {
+  display: flex;
+
+  .item {
+    width: calc((100% - 150px) / 6);
+
+    margin-right: 30px;
+    &:nth-child(6n) {
+      margin-right: 0;
+    }
+  }
+  .link {
+    display: flex;
+    width: 170px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #afb1b8;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition: border 250ms $transition;
+
+    &:hover,
+    &:focus {
+      border-color: $accent-color;
+    }
+  }
+}
+
+.icon-logo {
+  fill: #afb1b8;
+
+  transition: fill 250ms $transition;
+
+  .customers .link:hover &,
+  .customers .link:focus & {
+    fill: $accent-color;
+  }
+}

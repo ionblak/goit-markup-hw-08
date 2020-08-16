@@ -1,0 +1,89 @@
+.logo .item {
+  color: $title-text-color;
+}
+
+/* навигация сайта */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
+.site-nav {
+  display: flex;
+  margin-left: 85px;
+
+  & .link {
+    display: block;
+    padding-top: 32px;
+
+    color: $title-text-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+}
+.site-nav .item:not(:last-child) {
+  margin-right: 50px;
+}
+.mail {
+  display: flex;
+  margin-left: auto;
+
+  .item:not(:last-child) {
+    margin-right: 32px;
+  }
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-text-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    transition: color 250ms $transition;
+  }
+}
+
+.mail-svg {
+  width: 16px;
+  height: 11px;
+  margin-right: 10px;
+  fill: $primary-text-color;
+
+  transition: fill 250ms $transition;
+  .mail .link:hover &,
+  .mail .link:focus & {
+    fill: $accent-color;
+  }
+}
+.smartphone-svg {
+  width: 10px;
+  height: 15px;
+  margin-right: 10px;
+  fill: $primary-text-color;
+
+  transition: fill 250ms $transition;
+
+  .mail .link:hover &,
+  .mail .link:focus & {
+    fill: $accent-color;
+  }
+}
+.site-nav .focus {
+  color: $accent-color;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $accent-color;
+    margin-top: 28px;
+  }
+}
