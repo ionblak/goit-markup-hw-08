@@ -1,13 +1,10 @@
-.section-advantages {
-  padding-top: 94px;
-  padding-bottom: 47px;
-}
+
 .box-icon {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 270px;
+  width: 100%;
   height: 120px;
   border-radius: 4px;
   background-color: $team-bg-color;
@@ -19,22 +16,34 @@
 }
 
 .advantages {
-  display: flex;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 
   .item {
-    width: calc((100% - 90px) / 4);
-    margin-right: 30px;
-
-    &:nth-child(4n) {
-      margin-right: 0;
+    // width: 480px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 768px) {
+      width: calc((100% - 60px) / 2);
+      margin: 15px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: calc((100% - 120px) / 4);
     }
   }
   .title {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
+    text-align: center;
     text-transform: uppercase;
     color: $title-text-color;
+
+    @media screen and (min-width: 768px) {
+      text-align: start;
+    }
   }
   .text {
     margin-top: 0;

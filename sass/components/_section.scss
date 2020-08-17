@@ -1,6 +1,6 @@
 .section-title {
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -10,4 +10,13 @@
 .title {
   margin-top: 0;
   margin-bottom: 10px;
+}
+.section-team,
+.section-customers {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.section-advantages {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }

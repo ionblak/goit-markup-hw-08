@@ -1,40 +1,81 @@
-.logo .item {
-  color: $title-text-color;
-}
-
-/* навигация сайта */
-.main-nav {
-  display: flex;
-  align-items: center;
-}
 .page-header {
+  position: relative;
   border-bottom: 1px solid #ececec;
 }
-.site-nav {
-  display: flex;
-  margin-left: 85px;
+/* навигация сайта */
 
-  & .link {
+.menu-conteiner {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 60px 140px;
+  background-color: $bg-color;
+
+  &.is-open {
     display: block;
-    padding-top: 32px;
-
-    color: $title-text-color;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
   }
+
+  .site-nav {
+    margin-bottom: 60px;
+    // display: flex;
+    // margin-left: 85px;
+
+    & .link {
+      display: inline-block;
+      padding-top: 40px;
+
+      color: $title-text-color;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.14;
+      letter-spacing: 0.02em;
+    }
+  }
+  // .site-nav .item:not(:last-child) {
+  //   margin-right: 50px;
+  // }
 }
-.site-nav .item:not(:last-child) {
-  margin-right: 50px;
-}
-.mail {
+.main-nav {
   display: flex;
-  margin-left: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
-  .item:not(:last-child) {
-    margin-right: 32px;
+  .menu-button {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    .icon-cross {
+      display: none;
+    }
+    &.is-open .icon-cross {
+      display: block;
+    }
+    &.is-open .icon-menu {
+      display: none;
+    }
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
   }
+}
+
+.mail {
+  // display: flex;
+  // margin-left: auto;
+
+  // .item:not(:last-child) {
+  //   margin-right: 32px;
+  // }
   .link {
     display: flex;
     justify-content: center;
@@ -44,6 +85,7 @@
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    text-align: center;
 
     transition: color 250ms $transition;
   }
@@ -72,18 +114,5 @@
   .mail .link:hover &,
   .mail .link:focus & {
     fill: $accent-color;
-  }
-}
-.site-nav .focus {
-  color: $accent-color;
-
-  &::after {
-    display: block;
-    content: "";
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: $accent-color;
-    margin-top: 28px;
   }
 }
