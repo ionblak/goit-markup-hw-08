@@ -457,6 +457,12 @@ img {
   color: #212121;
 }
 
+@media screen and (min-width: 1200px) {
+  .section-title {
+    margin-bottom: 50px;
+  }
+}
+
 .title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -468,9 +474,35 @@ img {
   padding-bottom: 60px;
 }
 
+@media screen and (min-width: 1200px) {
+  .section-team,
+  .section-customers {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
 .section-advantages {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section-advantages {
+    padding-top: 94px;
+    padding-bottom: 47px;
+  }
+}
+
+.section-works {
+  padding-bottom: 94px;
+  padding-top: 47px;
+}
+
+@media screen and (max-width: 1200px) {
+  .section-works {
+    display: none;
+  }
 }
 
 .page-header {
@@ -726,11 +758,11 @@ img {
   color: #fff;
 }
 
-.block-contaks {
+.block-contacts__address {
   margin-bottom: 60px;
 }
 
-.block-contaks .location {
+.block-contacts__address .location {
   display: block;
   margin-bottom: 9px;
   font-size: 14px;
@@ -739,7 +771,7 @@ img {
   text-align: center;
 }
 
-.block-contaks .contaks {
+.block-contacts__address .contacts {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -747,17 +779,22 @@ img {
   text-align: center;
 }
 
-.block-contaks .contaks--mail {
+.block-contacts__address .contakcts--mail {
   display: block;
   margin-bottom: 9px;
   text-align: center;
 }
 
-.footer-actions .blok-action {
+.blok-action {
   width: 206px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
+  order: 3;
+}
+
+.blok-form {
+  width: 450px;
 }
 
 .blok-action__social-networks {

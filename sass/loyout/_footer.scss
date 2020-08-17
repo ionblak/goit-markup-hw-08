@@ -3,6 +3,10 @@
   padding-bottom: 60px;
   background-color: $footer-bg-color;
 
+  .container {
+    @media screen and (min-width: 768px) {
+    }
+  }
   .logo {
     margin-bottom: 20px;
     text-align: center;
@@ -19,8 +23,9 @@
   }
 }
 
-.block-contaks {
+.block-contacts__address {
   margin-bottom: 60px;
+
   .location {
     display: block;
     //   width: max-content;
@@ -31,7 +36,7 @@
     text-align: center;
   }
 
-  .contaks {
+  .contacts {
     //   width: max-content;
     font-size: 14px;
     line-height: 1.71;
@@ -39,22 +44,26 @@
     color: $footer-contacts-color;
     text-align: center;
   }
-  .contaks--mail {
+  .contakcts--mail {
     display: block;
     margin-bottom: 9px;
     text-align: center;
   }
 }
-.footer-actions {
-  .blok-action {
-    width: 206px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 60px;
-  }
-  // .blok-action:not(:last-child) {
-  //   margin-right: 94px;
-  // }
+
+.blok-action {
+  width: 206px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  order: 3;
+}
+
+// .blok-action:not(:last-child) {
+//   margin-right: 94px;
+// }
+.blok-form {
+  width: 450px;
 }
 .blok-action__social-networks {
   display: flex;
