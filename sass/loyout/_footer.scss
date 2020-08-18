@@ -5,6 +5,10 @@
 
   .container {
     @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
     }
   }
   .logo {
@@ -23,12 +27,17 @@
   }
 }
 
+.block-contacts {
+  @media screen and (min-width: 768px) {
+    margin-left: 70px;
+  }
+}
 .block-contacts__address {
   margin-bottom: 60px;
 
   .location {
     display: block;
-    //   width: max-content;
+    // width: max-content;
     margin-bottom: 9px;
     font-size: 14px;
     line-height: 1.71;
@@ -37,7 +46,7 @@
   }
 
   .contacts {
-    //   width: max-content;
+    // width: max-content;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -56,14 +65,19 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
-  order: 3;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 165px;
+  }
 }
 
 // .blok-action:not(:last-child) {
 //   margin-right: 94px;
 // }
 .blok-form {
-  width: 450px;
+  @media screen and (min-width: 768px) {
+    width: 450px;
+  }
 }
 .blok-action__social-networks {
   display: flex;

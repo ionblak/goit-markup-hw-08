@@ -742,6 +742,15 @@ img {
   background-color: #2f303a;
 }
 
+@media screen and (min-width: 768px) {
+  .footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
 .footer .logo {
   margin-bottom: 20px;
   text-align: center;
@@ -756,6 +765,12 @@ img {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .block-contacts {
+    margin-left: 70px;
+  }
 }
 
 .block-contacts__address {
@@ -790,11 +805,18 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
-  order: 3;
 }
 
-.blok-form {
-  width: 450px;
+@media screen and (min-width: 768px) {
+  .blok-action {
+    margin-left: 165px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blok-form {
+    width: 450px;
+  }
 }
 
 .blok-action__social-networks {

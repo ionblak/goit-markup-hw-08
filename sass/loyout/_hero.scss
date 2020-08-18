@@ -15,6 +15,11 @@
     url("../image/Header-img.jpg");
   text-align: center;
 
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
   &-title {
     margin-top: 0;
     margin-bottom: 30px;
