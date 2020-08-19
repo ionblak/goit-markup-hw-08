@@ -1,75 +1,95 @@
 .page-header {
   position: relative;
   border-bottom: 1px solid #ececec;
+  .container {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
 /* навигация сайта */
 
 .menu-conteiner {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  padding: 60px 140px;
-  background-color: $bg-color;
+  @media screen and (max-width: 767px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 60px 140px;
+    background-color: $bg-color;
 
-  &.is-open {
-    display: block;
+    &.is-open {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
   }
 
   .site-nav {
-    margin-bottom: 60px;
-    // display: flex;
-    // margin-left: 85px;
+    @media screen and (max-width: 767px) {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 60px;
 
+      .item {
+        margin-bottom: 40px;
+        text-align: center;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media screen and (min-width: 768px) {
+      display: flex;
+      margin-right: 84px;
+      padding-top: 32px;
+      .item {
+        margin-right: 50px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
     & .link {
-      display: inline-block;
-      padding-top: 40px;
-
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      width: max-content;
+      text-align: center;
       color: $title-text-color;
       font-weight: 500;
       font-size: 14px;
       line-height: 1.14;
       letter-spacing: 0.02em;
+
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
     }
+
+    // margin-bottom: 60px;
+    // display: flex;
+    // margin-left: 85px;
+    // width: max-content;
+    // text-align: center;
   }
   // .site-nav .item:not(:last-child) {
   //   margin-right: 50px;
   // }
 }
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  .menu-button {
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-
-    .icon-cross {
-      display: none;
-    }
-    &.is-open .icon-cross {
-      display: block;
-    }
-    &.is-open .icon-menu {
-      display: none;
-    }
-    &:hover,
-    &:focus {
-      fill: $accent-color;
+.mail-nav {
+  .item {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
-}
-
-.mail {
   // display: flex;
   // margin-left: auto;
 
@@ -77,9 +97,9 @@
   //   margin-right: 32px;
   // }
   .link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     color: $primary-text-color;
     font-weight: 500;
     font-size: 14px;
@@ -90,6 +110,43 @@
     transition: color 250ms $transition;
   }
 }
+.main-nav {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-button {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    .icon-menu {
+      display: none;
+    }
+    &.is-open .icon-menu {
+      display: block;
+    }
+    &.is-open .icon-cross {
+      display: none;
+    }
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
+  }
+}
 
 .mail-svg {
   width: 16px;
@@ -98,8 +155,9 @@
   fill: $primary-text-color;
 
   transition: fill 250ms $transition;
-  .mail .link:hover &,
-  .mail .link:focus & {
+
+  .mail-nav .link:hover &,
+  .mail-nav .link:focus & {
     fill: $accent-color;
   }
 }
@@ -111,8 +169,8 @@
 
   transition: fill 250ms $transition;
 
-  .mail .link:hover &,
-  .mail .link:focus & {
+  .mail-nav .link:hover &,
+  .mail-nav .link:focus & {
     fill: $accent-color;
   }
 }

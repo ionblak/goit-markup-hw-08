@@ -509,33 +509,97 @@ body.modal-open {
   }
 }
 
+.site-nav .focus {
+  color: #2196f3;
+}
+
+.site-nav .focus::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #2196f3;
+  margin-top: 28px;
+}
+
+@media screen and (max-width: 767px) {
+  .site-nav .focus::after {
+    margin-top: 8px;
+  }
+}
+
 .page-header {
   position: relative;
   border-bottom: 1px solid #ececec;
 }
 
+@media screen and (min-width: 768px) {
+  .page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 /* навигация сайта */
-.menu-conteiner {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  padding: 60px 140px;
-  background-color: #fff;
+@media screen and (max-width: 767px) {
+  .menu-conteiner {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 60px 140px;
+    background-color: #fff;
+  }
+  .menu-conteiner.is-open {
+    display: block;
+  }
 }
 
-.menu-conteiner.is-open {
-  display: block;
+@media screen and (min-width: 768px) {
+  .menu-conteiner {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.menu-conteiner .site-nav {
-  margin-bottom: 60px;
+@media screen and (max-width: 767px) {
+  .menu-conteiner .site-nav {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 60px;
+  }
+  .menu-conteiner .site-nav .item {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .menu-conteiner .site-nav .item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-conteiner .site-nav {
+    display: flex;
+    margin-right: 84px;
+    padding-top: 32px;
+  }
+  .menu-conteiner .site-nav .item {
+    margin-right: 50px;
+  }
+  .menu-conteiner .site-nav .item:last-child {
+    margin-right: 0;
+  }
 }
 
 .menu-conteiner .site-nav .link {
-  display: inline-block;
-  padding-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: max-content;
+  text-align: center;
   color: #212121;
   font-weight: 500;
   font-size: 14px;
@@ -543,12 +607,36 @@ body.modal-open {
   letter-spacing: 0.02em;
 }
 
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.menu-conteiner .site-nav .link:hover, .menu-conteiner .site-nav .link:focus {
+  color: #2196f3;
+}
+
+.mail-nav .item {
+  margin-bottom: 16px;
+}
+
+.mail-nav .item:last-child {
+  margin-bottom: 0;
+}
+
+.mail-nav .link {
+  color: #757575;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-align: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (max-width: 767px) {
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .main-nav .menu-button {
@@ -561,33 +649,26 @@ body.modal-open {
   cursor: pointer;
 }
 
-.main-nav .menu-button .icon-cross {
+@media screen and (min-width: 768px) {
+  .main-nav .menu-button {
+    display: none;
+  }
+}
+
+.main-nav .menu-button .icon-menu {
   display: none;
 }
 
-.main-nav .menu-button.is-open .icon-cross {
+.main-nav .menu-button.is-open .icon-menu {
   display: block;
 }
 
-.main-nav .menu-button.is-open .icon-menu {
+.main-nav .menu-button.is-open .icon-cross {
   display: none;
 }
 
 .main-nav .menu-button:hover, .main-nav .menu-button:focus {
   fill: #2196f3;
-}
-
-.mail .link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #757575;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  text-align: center;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-svg {
@@ -598,8 +679,8 @@ body.modal-open {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mail .link:hover .mail-svg,
-.mail .link:focus .mail-svg {
+.mail-nav .link:hover .mail-svg,
+.mail-nav .link:focus .mail-svg {
   fill: #2196f3;
 }
 
@@ -611,8 +692,8 @@ body.modal-open {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mail .link:hover .smartphone-svg,
-.mail .link:focus .smartphone-svg {
+.mail-nav .link:hover .smartphone-svg,
+.mail-nav .link:focus .smartphone-svg {
   fill: #2196f3;
 }
 
