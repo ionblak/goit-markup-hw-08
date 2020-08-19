@@ -397,6 +397,10 @@ img {
   color: #2196f3;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .blok-action__social-networks .link {
   display: flex;
   justify-content: center;

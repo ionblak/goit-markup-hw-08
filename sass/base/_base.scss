@@ -49,3 +49,6 @@ img {
 .page .link:focus {
   color: $accent-color;
 }
+body.modal-open {
+  overflow: hidden;
+}
