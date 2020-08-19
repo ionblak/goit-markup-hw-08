@@ -18,7 +18,8 @@
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 60px 140px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     background-color: $bg-color;
 
     &.is-open {
@@ -116,6 +117,9 @@
   }
 
   .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $primary-text-color;
     font-weight: 500;
     font-size: 14px;
@@ -124,16 +128,10 @@
     text-align: center;
 
     @media screen and (min-width: 768px) {
-      text-align: start;
+      justify-content: flex-start;
     }
 
     transition: color 250ms $transition;
-
-    @media screen and (min-width: 1200px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 }
 .main-nav {
@@ -165,11 +163,13 @@
     .icon-menu {
       display: none;
     }
-    &.is-open .icon-menu {
-      display: block;
-    }
-    &.is-open .icon-cross {
-      display: none;
+    &.is-open {
+      .icon-menu {
+        display: block;
+      }
+      .icon-cross {
+        display: none;
+      }
     }
     &:hover,
     &:focus {

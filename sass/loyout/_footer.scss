@@ -10,11 +10,20 @@
       justify-content: space-around;
       align-items: center;
     }
+    @media screen and (min-width: 1200px) {
+      justify-content: space-around;
+      align-items: baseline;
+    }
   }
   .logo {
     margin-bottom: 20px;
     text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      text-align: start;
+    }
   }
+
   .action {
     display: block;
     margin-bottom: 20px;
@@ -24,6 +33,10 @@
     text-align: center;
     text-transform: uppercase;
     color: $bg-color;
+
+    @media screen and (min-width: 1200px) {
+      text-align: start;
+    }
   }
 }
 
@@ -31,9 +44,18 @@
   @media screen and (min-width: 768px) {
     margin-left: 70px;
   }
+  @media screen and (min-width: 1200px) {
+    margin-left: 0;
+  }
 }
 .block-contacts__address {
   margin-bottom: 60px;
+  text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    text-align: start;
+    margin-bottom: 0;
+  }
 
   .location {
     display: block;
@@ -42,7 +64,6 @@
     font-size: 14px;
     line-height: 1.71;
     color: $bg-color;
-    text-align: center;
   }
 
   .contacts {
@@ -51,12 +72,10 @@
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: $footer-contacts-color;
-    text-align: center;
   }
   .contakcts--mail {
     display: block;
     margin-bottom: 9px;
-    text-align: center;
   }
 }
 
@@ -69,14 +88,19 @@
   @media screen and (min-width: 768px) {
     margin-left: 165px;
   }
+  @media screen and (min-width: 1200px) {
+    margin-left: 60px;
+    margin-bottom: 0;
+    margin-right: 94px;
+  }
 }
 
-// .blok-action:not(:last-child) {
-//   margin-right: 94px;
-// }
 .blok-form {
   @media screen and (min-width: 768px) {
     width: 450px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 570px;
   }
 }
 .blok-action__social-networks {
@@ -110,10 +134,13 @@
   border-radius: 50%;
 }
 /* стилизация форм */
-// .blok-action__form {
-//   display: flex;
-//   justify-content: center;
-// }
+
+.blok-action__form {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .blok-action__email-input {
   display: block;
@@ -130,6 +157,12 @@
   color: rgba(255, 255, 255, 0.6);
 
   transition: border 250ms $transition;
+
+  @media screen and (min-width: 1200px) {
+    width: 358px;
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
 
   &:focus {
     border-color: $accent-color;
@@ -158,6 +191,11 @@
   letter-spacing: 0.06em;
   color: $bg-color;
   cursor: pointer;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .blok-action__button-icon {
   width: 24px;
