@@ -355,6 +355,8 @@ address {
 img {
   display: block;
   margin: 0;
+  width: 100%;
+  height: auto;
 }
 
 /* невидимый заголовок */
@@ -872,10 +874,6 @@ body.modal-open {
 .projects-box {
   position: relative;
   overflow: hidden;
-}
-
-.projects-box .projects-photo {
-  width: 100%;
 }
 
 .projects-box .text {
