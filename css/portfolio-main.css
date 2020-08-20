@@ -545,7 +545,6 @@ body.modal-open {
 /* навигация сайта */
 @media screen and (max-width: 767px) {
   .menu-conteiner {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -553,9 +552,13 @@ body.modal-open {
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: #fff;
+    z-index: 999;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .menu-conteiner.is-open {
-    display: block;
+    transform: scale(1);
   }
 }
 
@@ -756,18 +759,49 @@ body.modal-open {
 }
 
 .section-portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .section-portfolio {
+    padding-top: 93px;
+    padding-bottom: 94px;
+  }
 }
 
 .strainer {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .strainer {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .strainer {
+    margin-bottom: 50px;
+  }
 }
 
 .strainer .item {
   margin-right: 8px;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .strainer .item {
+    margin-bottom: 0;
+  }
+}
+
+.strainer .item:nth-child(n + 4) {
+  margin-bottom: 0;
 }
 
 .strainer .item:last-child {
@@ -798,63 +832,60 @@ body.modal-open {
   color: #fff;
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.projects .title {
-  padding-left: 24px;
-  margin-top: 20px;
-  margin-bottom: 4px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-  color: #212121;
+@media screen and (min-width: 768px) {
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
 }
 
 .projects .item {
-  width: calc((100% - 60px) / 3);
-  margin-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
   overflow: hidden;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects .item:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .projects .item {
+    width: calc((100% - 60px) / 2);
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects .item {
+    width: calc((100% - 90px) / 3);
+  }
 }
 
 .projects .item:hover, .projects .item:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
-.projects .item:nth-child(3n) {
-  margin-right: 0;
-}
-
-.projects .item:nth-last-child(-n + 3) {
-  margin-bottom: 0;
-}
-
-.projects-link {
-  border: 1px solid #eeeeee;
-}
-
 .projects-box {
   position: relative;
-  width: 100%;
   overflow: hidden;
 }
 
-.projects .text {
+.projects-box .projects-photo {
+  width: 100%;
+}
+
+.projects-box .text {
   position: absolute;
   top: 0;
   right: 0;
-  padding-top: 63px;
-  padding-right: 24px;
-  padding-bottom: 63px;
-  padding-left: 24px;
   height: 100%;
   width: 100%;
   margin: 0;
+  padding: 63px 24px;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
@@ -864,15 +895,33 @@ body.modal-open {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.projects .item .link:hover .text,
-.projects .item .link:focus .text {
+.projects-link:hover .projects-box .text,
+.projects-link:focus .projects-box .text {
   transform: translateY(0);
 }
 
-.projects .imet {
+.text-box {
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 24px;
+}
+
+.text-box .title {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: #212121;
+}
+
+.text-box .imet {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;

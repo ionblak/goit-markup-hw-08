@@ -13,7 +13,6 @@
 
 .menu-conteiner {
   @media screen and (max-width: 767px) {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -21,9 +20,13 @@
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: $bg-color;
+    z-index: 999;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 400ms $transition;
 
     &.is-open {
-      display: block;
+      transform: scale(1);
     }
   }
   @media screen and (min-width: 768px) {

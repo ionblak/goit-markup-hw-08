@@ -1,15 +1,35 @@
 .section-portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 93px;
+    padding-bottom: 94px;
+  }
 }
 .strainer {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
 
   .item {
     margin-right: 8px;
+    margin-bottom: 15px;
 
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(n + 4) {
+      margin-bottom: 0;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -44,28 +64,31 @@
   }
 }
 
+// стилизация карточек
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-
-  .title {
-    padding-left: 24px;
-    margin-top: 20px;
-    margin-bottom: 4px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 0.06em;
-    color: $title-text-color;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
   }
-
   .item {
-    width: calc((100% - 60px) / 3);
-    margin-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
     overflow: hidden;
 
     transition: box-shadow 250ms $transition;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: calc((100% - 60px) / 2);
+      margin: 15px;
+    }
+    @media screen and (min-width: 1200px) {
+      width: calc((100% - 90px) / 3);
+    }
 
     &:hover,
     &:focus {
@@ -74,56 +97,61 @@
     }
   }
 }
-
-.projects .item:nth-child(3n) {
-  margin-right: 0;
-}
-.projects .item:nth-last-child(-n + 3) {
-  margin-bottom: 0;
-}
-
-.projects-link {
-  border: 1px solid $border-project;
-}
 .projects-box {
   position: relative;
-  width: 100%;
   overflow: hidden;
-}
-.projects .text {
-  position: absolute;
-  top: 0;
-  right: 0;
 
-  padding-top: 63px;
-  padding-right: 24px;
-  padding-bottom: 63px;
+  .projects-photo {
+    width: 100%;
+  }
+
+  .text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+
+    color: $bg-color;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(110%);
+    transition: transform 250ms $transition;
+
+    .projects-link:hover &,
+    .projects-link:focus & {
+      transform: translateY(0);
+    }
+  }
+}
+.text-box {
+  border-left: 1px solid $border-project;
+  border-bottom: 1px solid $border-project;
+  border-right: 1px solid $border-project;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 24px;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
 
-  color: $bg-color;
-  background-color: rgba(33, 150, 243, 0.9);
-
-  transform: translateY(110%);
-  transition: transform 250ms $transition;
-}
-
-.projects .item .link:hover .text,
-.projects .item .link:focus .text {
-  transform: translateY(0);
-}
-
-.projects .imet {
-  padding-left: 24px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.03em;
-  color: $primary-text-color;
+  .title {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: $title-text-color;
+  }
+  .imet {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+    color: $primary-text-color;
+  }
 }
