@@ -23,15 +23,15 @@
     margin-right: 8px;
     margin-bottom: 15px;
 
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0;
-    }
-
     &:nth-child(n + 4) {
       margin-bottom: 0;
     }
     &:last-child {
       margin-right: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
     }
   }
 }
@@ -108,9 +108,9 @@
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 63px 24px;
-    font-size: 18px;
-    line-height: 1.56;
+    padding: 30px 24px;
+    font-size: 16px;
+    line-height: 1.75;
     letter-spacing: 0.03em;
 
     color: $bg-color;
@@ -118,6 +118,18 @@
 
     transform: translateY(110%);
     transition: transform 250ms $transition;
+
+    @media screen and (min-width: 480px) {
+      font-size: 18px;
+      line-height: 1.56;
+      padding: 77px 24px;
+    }
+    @media screen and (min-width: 768px) {
+      padding: 49px 24px;
+    }
+    @media screen and (min-width: 1200px) {
+      padding: 63px 24px;
+    }
 
     .projects-link:hover &,
     .projects-link:focus & {
