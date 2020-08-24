@@ -580,6 +580,15 @@ body.modal-open {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .modal {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .modal-button {
   position: absolute;
   top: 8px;
